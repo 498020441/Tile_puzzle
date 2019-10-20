@@ -20,7 +20,6 @@ def create_tile_puzzle(rows, cols):
 
 
 class TilePuzzle(object):
-    # Required
     def __init__(self, board):
         self.board = board
         self.rows = len(board)
@@ -86,7 +85,7 @@ class TilePuzzle(object):
             if successor.perform_move(move):
                 yield (move.strip(), successor)
 
-    # Required
+    # iddfs
     def find_solutions_iddfs(self):
         limit, moves = 0, []
         found = False
@@ -103,7 +102,7 @@ class TilePuzzle(object):
             for move, children_node in self.successors():
                 yield from children_node.iddfs_helper(limit-1, moves+[move])
 
-    # Required
+    # A*
     def find_solution_a_star(self):
         open_q = PQ()
         visited = set()
