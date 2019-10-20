@@ -1,6 +1,6 @@
 import sys
 import tkinter
-import iddfs_A_start_searching_sovler.py as homework3
+import iddfs_A_star_searching_sovler.py as homework3
 
 class Tile(tkinter.Canvas):
 
